@@ -1,0 +1,25 @@
+﻿<Window x:Class="Gungnir.ChangeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gungnir"
+        mc:Ignorable="d"
+        Title="文件差异对比" Height="500" Width="500" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock x:Name="textBlock" Grid.Row="0" HorizontalAlignment="Left" TextWrapping="NoWrap" Text="文件名：" VerticalAlignment="Center" FontSize="20"  Height="30" Margin="0,0" FontWeight="Bold"/>
+            <TextBox x:Name="PathText" Grid.Row="0" HorizontalAlignment="Left" Height="30"  TextWrapping="NoWrap" VerticalAlignment="Center" Width="300"/>
+            <Button x:Name="SelectFile" Content="选择文件" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8,0" FontWeight="Bold" Click="SelectFile_Click" />
+        </StackPanel>
+        <DataGrid x:Name="dataGrid" Grid.Row="1" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" SelectionMode="Single" SelectionUnit="FullRow" IsReadOnly="True">
+        </DataGrid>
+        <Button x:Name="StartFind" Grid.Row="2" Content="开始对比" HorizontalAlignment="Right"  VerticalAlignment="Center" Margin="0,0,10,0" Click="StartFind_Click"/>
+        <TextBlock x:Name="ViewSize" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="NoWrap"  VerticalAlignment="Center"/>
+    </Grid>
+</Window>
